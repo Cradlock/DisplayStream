@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rust Screen Stream</title>
+    <style>
+        body { background: #1a1a1a; color: white; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; }
+        .container { margin-top: 20px; border: 2px solid #333; border-radius: 8px; overflow: hidden; background: #000; }
+        img { max-width: 100%; height: auto; display: block; }
+        .controls { margin-top: 15px; gap: 10px; display: flex; }
+        button { padding: 10px 20px; cursor: pointer; border: none; border-radius: 4px; background: #2563eb; color: white; }
+        button:hover { background: #1d4ed8; }
+        .status { margin-bottom: 5px; font-size: 0.9em; color: #888; }
+    </style>
+</head>
+<body>
+    <h1>Screen Monitor</h1>
+    <div class="status" id="status">Статус: Готов</div>
+    
+    <div class="container">
+        <img id="screen-view" src="/screen" alt="Экран не запущен">
+    </div>
+
+    <div class="controls">
+        <button id="toggle-btn">Остановить трансляцию</button>
+        <button id="refresh-btn">Обновить поток</button>
+    </div>
+<div class="mouse-controls">
+    <div class="row">
+        <button onpointerdown="moveMouse(0, -50, event)">Вверх ↑</button>
+    </div>
+    <div class="row">
+        <button onpointerdown="moveMouse(-50, 0, event)">← Влево</button>
+        <button onpointerdown="moveMouse(50, 0, event)">Вправо →</button>
+    </div>
+    <div class="row">
+        <button onpointerdown="moveMouse(0, 50, event)">Вниз ↓</button>
+    </div>
+</div>
+<style>
+    .mouse-controls { margin-top: 20px; text-align: center; }
+    .row { margin: 5px; }
+    .mouse-controls button { width: 100px; background: #4b5563; }
+</style>
+    <script src="/main.js"></script>
+    <script src="/controller.js"></script>
+</body>
+</html>
+
+
