@@ -26,18 +26,36 @@
         <button id="toggle-btn">Остановить трансляцию</button>
         <button id="refresh-btn">Обновить поток</button>
     </div>
-<div class="mouse-controls">
+
+
+
+
+
+<div class="settings">
+    <label for="speed-range">Чувствительность: <span id="speed-val">10</span>px</label>
+    <input type="range" id="speed-range" min="1" max="100" value="10">
+</div>
+  <div class="mouse-controls">
     <div class="row">
-        <button onpointerdown="moveMouse(0, -50, event)">Вверх ↑</button>
+        <button onpointerdown="startMoving(0, -1, event)" 
+                onpointerup="stopMoving(event)" 
+                onpointercancel="stopMoving(event)">Вверх</button>
     </div>
     <div class="row">
-        <button onpointerdown="moveMouse(-50, 0, event)">← Влево</button>
-        <button onpointerdown="moveMouse(50, 0, event)">Вправо →</button>
+        <button onpointerdown="startMoving(-1, 0, event)" 
+                onpointerup="stopMoving(event)" 
+                onpointercancel="stopMoving(event)">Влево</button>
+        <button onpointerdown="startMoving(1, 0, event)" 
+                onpointerup="stopMoving(event)" 
+                onpointercancel="stopMoving(event)">Вправо</button>
     </div>
     <div class="row">
-        <button onpointerdown="moveMouse(0, 50, event)">Вниз ↓</button>
+        <button onpointerdown="startMoving(0, 1, event)" 
+                onpointerup="stopMoving(event)" 
+                onpointercancel="stopMoving(event)">Вниз</button>
     </div>
 </div>
+
 <style>
     .mouse-controls { margin-top: 20px; text-align: center; }
     .row { margin: 5px; }

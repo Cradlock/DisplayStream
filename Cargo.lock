@@ -641,21 +641,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "display_stream"
-version = "0.1.0"
-dependencies = [
- "axum",
- "enigo",
- "futures",
- "image",
- "imageproc",
- "serde",
- "stream",
- "tokio",
- "xcap",
-]
-
-[[package]]
 name = "displaydoc"
 version = "0.2.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1261,6 +1246,21 @@ name = "hex"
 version = "0.4.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7f24254aa9a54b5c858eaee2f5bccdb46aaf0e486a595ed5fd8f86ba55232a70"
+
+[[package]]
+name = "highsocks"
+version = "0.1.0"
+dependencies = [
+ "axum",
+ "enigo",
+ "futures",
+ "image",
+ "imageproc",
+ "serde",
+ "stream",
+ "tokio",
+ "xcap",
+]
 
 [[package]]
 name = "http"
